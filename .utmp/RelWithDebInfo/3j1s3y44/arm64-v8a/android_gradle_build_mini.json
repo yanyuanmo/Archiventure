@@ -1,0 +1,35 @@
+{
+  "buildFiles": [
+    "K:\\cs5520\\project\\Unity_project\\Archiventure\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\unityLibrary\\src\\main\\cpp\\CMakeLists.txt",
+    "K:\\cs5520\\project\\Unity_project\\Archiventure\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\unityLibrary\\src\\main\\cpp\\FramePacing\\CMakeLists.txt",
+    "K:\\cs5520\\project\\Unity_project\\Archiventure\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\unityLibrary\\src\\main\\cpp\\GameActivity\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "K:\\Unity\\6000.0.27f1\\Editor\\Data\\PlaybackEngines\\AndroidPlayer\\SDK\\cmake\\3.22.1\\bin\\ninja.exe",
+      "-C",
+      "K:\\cs5520\\project\\Unity_project\\Archiventure\\.utmp\\RelWithDebInfo\\3j1s3y44\\arm64-v8a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "K:\\Unity\\6000.0.27f1\\Editor\\Data\\PlaybackEngines\\AndroidPlayer\\SDK\\cmake\\3.22.1\\bin\\ninja.exe",
+    "-C",
+    "K:\\cs5520\\project\\Unity_project\\Archiventure\\.utmp\\RelWithDebInfo\\3j1s3y44\\arm64-v8a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "game::@d02bb112ea9f9c2ed29f": {
+      "artifactName": "game",
+      "abi": "arm64-v8a",
+      "output": "K:\\cs5520\\project\\Unity_project\\Archiventure\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\unityLibrary\\build\\intermediates\\cxx\\RelWithDebInfo\\3j1s3y44\\obj\\arm64-v8a\\libgame.so",
+      "runtimeFiles": []
+    },
+    "swappywrapper::@7e25bd1f32ce224db4e9": {
+      "artifactName": "swappywrapper",
+      "abi": "arm64-v8a",
+      "output": "K:\\cs5520\\project\\Unity_project\\Archiventure\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\unityLibrary\\build\\intermediates\\cxx\\RelWithDebInfo\\3j1s3y44\\obj\\arm64-v8a\\libswappywrapper.so",
+      "runtimeFiles": []
+    }
+  }
+}

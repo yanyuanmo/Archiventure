@@ -1,0 +1,8 @@
+K:/cs5520/project/Unity_project/Archiventure/.utmp/RelWithDebInfo/3j1s3y44/x86_64/CMakeFiles/edit_cache.dir
+K:/cs5520/project/Unity_project/Archiventure/.utmp/RelWithDebInfo/3j1s3y44/x86_64/CMakeFiles/rebuild_cache.dir
+K:/cs5520/project/Unity_project/Archiventure/.utmp/RelWithDebInfo/3j1s3y44/x86_64/GameActivity/CMakeFiles/game.dir
+K:/cs5520/project/Unity_project/Archiventure/.utmp/RelWithDebInfo/3j1s3y44/x86_64/GameActivity/CMakeFiles/edit_cache.dir
+K:/cs5520/project/Unity_project/Archiventure/.utmp/RelWithDebInfo/3j1s3y44/x86_64/GameActivity/CMakeFiles/rebuild_cache.dir
+K:/cs5520/project/Unity_project/Archiventure/.utmp/RelWithDebInfo/3j1s3y44/x86_64/FramePacing/CMakeFiles/swappywrapper.dir
+K:/cs5520/project/Unity_project/Archiventure/.utmp/RelWithDebInfo/3j1s3y44/x86_64/FramePacing/CMakeFiles/edit_cache.dir
+K:/cs5520/project/Unity_project/Archiventure/.utmp/RelWithDebInfo/3j1s3y44/x86_64/FramePacing/CMakeFiles/rebuild_cache.dir
