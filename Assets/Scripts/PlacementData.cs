@@ -6,7 +6,7 @@ namespace Archiventure {
     
     [System.Serializable]
     public class PlacementData {
-        public List<StructureData> structures = new List<StructureData>();
+        public List<BuildingData> structures = new List<BuildingData>();
     }
 }
 
