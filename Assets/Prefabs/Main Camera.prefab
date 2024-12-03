@@ -138,10 +138,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2257f20ffc863de49bfd0d4cf3d21539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minZoom: 2
-  maxZoom: 8
-  smoothSpeed: 10
-  mapSize: {x: 100, y: 100}
+  movement: 1
+  movementTime: 50
+  zoomOutMin: 3
+  zoomOutMax: 8
+  leftLimit: -10
+  rightLimit: 10
+  bottomLimit: -10
+  upperLimit: 10
+  gameManager: {fileID: 0}
 --- !u!114 &8055769961284290434
 MonoBehaviour:
   m_ObjectHideFlags: 0
