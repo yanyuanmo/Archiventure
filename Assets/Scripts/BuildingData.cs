@@ -17,10 +17,16 @@ namespace Archiventure
     [System.Serializable]
     public enum BuildingType
     {
-        cityWall,
-        decorationBuilding,
-        house,
-        leisureStore
+        cityWall1,
+        decorationBuilding1,
+        decorationBuilding2,
+        house1,
+        house2,
+        house3,
+        leisureStore1,
+        leisureStore2,
+        leisureStore3
+
     }
 }
 
