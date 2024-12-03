@@ -307,8 +307,8 @@ MonoBehaviour:
   placeIsOccupied: {r: 1, g: 0.40392157, b: 0.40392157, a: 0.78431374}
   placeIsNotOccupied: {r: 0.7882353, g: 1, b: 0.7607843, a: 0.47058824}
   usualColorOfBuilding: {r: 1, g: 1, b: 1, a: 1}
-  building: {fileID: 0}
-  spriteOfBuilding: {fileID: 0}
+  building: {fileID: 195824982981505339}
+  spriteOfBuilding: {fileID: 4707629179843649908}
 --- !u!1 &2441819130068165685
 GameObject:
   m_ObjectHideFlags: 0
