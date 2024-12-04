@@ -429,6 +429,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Archiventure.GameManager, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 8908304567982861394, guid: 1c42de4dae3db104896eaeae61203a1b, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1867716694}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -612,7 +616,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2676937614997907116, guid: 5811ce2c0f128e747beb21c2ae2b373f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -27.06
+      value: -27
       objectReference: {fileID: 0}
     - target: {fileID: 2676937614997907116, guid: 5811ce2c0f128e747beb21c2ae2b373f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -670,6 +674,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2257f20ffc863de49bfd0d4cf3d21539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!20 &1867716694 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2676937614997907027, guid: 5811ce2c0f128e747beb21c2ae2b373f, type: 3}
+  m_PrefabInstance: {fileID: 1867716689}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1982685126 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5083565308231376242, guid: 1c42de4dae3db104896eaeae61203a1b, type: 3}
