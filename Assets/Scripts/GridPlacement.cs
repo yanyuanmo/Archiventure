@@ -10,7 +10,8 @@ namespace Archiventure
 
         void Start() 
         {
-            _grid = Grid.FindObjectOfType<Grid>();
+            //_grid = Grid.FindObjectOfType<Grid>();
+            _grid = Grid.FindFirstObjectByType<Grid>();
         }
 
         void Update()

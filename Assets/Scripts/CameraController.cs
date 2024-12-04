@@ -39,6 +39,7 @@ namespace Archiventure {
             if (movement == true)
             {
                 if (Input.GetMouseButtonDown(0))
+                //if (Mouse.current.leftButton.isPressed)
                 {
                     multiTouch = false;
 
