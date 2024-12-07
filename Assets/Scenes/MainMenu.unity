@@ -559,6 +559,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 77397075}
+    - target: {fileID: 5083565308231376242, guid: 1c42de4dae3db104896eaeae61203a1b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5278652998048204261, guid: 1c42de4dae3db104896eaeae61203a1b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -593,11 +597,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5563107945009905214, guid: 1c42de4dae3db104896eaeae61203a1b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -500.26
       objectReference: {fileID: 0}
     - target: {fileID: 5563107945009905214, guid: 1c42de4dae3db104896eaeae61203a1b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.1524963
       objectReference: {fileID: 0}
     - target: {fileID: 5563107945009905214, guid: 1c42de4dae3db104896eaeae61203a1b, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -621,7 +625,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7521106850969865677, guid: 1c42de4dae3db104896eaeae61203a1b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.1524963
       objectReference: {fileID: 0}
     - target: {fileID: 7521106850969865677, guid: 1c42de4dae3db104896eaeae61203a1b, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -657,11 +661,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7696066803034508067, guid: 1c42de4dae3db104896eaeae61203a1b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 500.26
       objectReference: {fileID: 0}
     - target: {fileID: 7696066803034508067, guid: 1c42de4dae3db104896eaeae61203a1b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.1524963
       objectReference: {fileID: 0}
     - target: {fileID: 7696066803034508067, guid: 1c42de4dae3db104896eaeae61203a1b, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1182,6 +1186,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2676937613483685959, guid: 5811ce2c0f128e747beb21c2ae2b373f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2676937614997907024, guid: 5811ce2c0f128e747beb21c2ae2b373f, type: 3}
       propertyPath: m_Name
       value: Main Camera
@@ -1196,7 +1204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2676937614997907116, guid: 5811ce2c0f128e747beb21c2ae2b373f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -27
+      value: -27.06
       objectReference: {fileID: 0}
     - target: {fileID: 2676937614997907116, guid: 5811ce2c0f128e747beb21c2ae2b373f, type: 3}
       propertyPath: m_LocalRotation.w

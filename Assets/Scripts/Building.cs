@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 namespace Archiventure
 {
@@ -55,6 +56,19 @@ namespace Archiventure
             slayers = GetComponent<SortingLayers>();
             spriteRenderer = GetComponent<SpriteRenderer>();
         }
+
+        //private void Update()
+        //{
+        //    if (Mouse.current.leftButton.wasPressedThisFrame)
+        //    {
+        //        OnMouseDownHandler();
+        //    }
+
+        //    if (Mouse.current.leftButton.isPressed && mouseDrag)
+        //    {
+        //        OnMouseDragHandler();
+        //    }
+        //}
 
         void FixedUpdate()
         {
@@ -125,6 +139,7 @@ namespace Archiventure
         }
 
         void OnMouseDown()
+        //private void OnMouseDownHandler()
         {
             zCordinateOfMouse = Camera.main.WorldToScreenPoint(transform.position).z;
             mouseOffset = transform.position - mouseWorldPos();
@@ -158,6 +173,7 @@ namespace Archiventure
         }
 
         void OnMouseDrag()
+        // private void OnMouseDragHandler()
         {
             if (mouseDrag == true)
             {
@@ -167,7 +183,8 @@ namespace Archiventure
 
         private Vector3 mouseWorldPos()
         {
-            Vector3 mousePosition = Input.mousePosition;
+            Vector3 mousePosition = Mouse.current.position.ReadValue();
+            //Vector3 mousePosition = Input.mousePosition;
             mousePosition.z = zCordinateOfMouse;
             return Camera.main.ScreenToWorldPoint(mousePosition);
         }

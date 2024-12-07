@@ -129,12 +129,12 @@ TextureImporter:
       name: HouseBuilding_1x1_012_0
       rect:
         serializedVersion: 2
-        x: 2
+        x: 0
         y: 0
         width: 106
         height: 73
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+      alignment: 9
+      pivot: {x: 0.51327056, y: 0.4122741}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []

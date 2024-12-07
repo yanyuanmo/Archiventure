@@ -180,6 +180,7 @@ MonoBehaviour:
   updatePanel: {fileID: 6144351927680095314}
   tile: {fileID: 8467095420243899955}
   updates:
+  - updateLevelSprite: {fileID: -5272076908960157424, guid: 2c4fac266e5809846aad1937d1626762, type: 3}
   - updateLevelSprite: {fileID: 495302664954744315, guid: 07dfd78e1a0997e458ced54cdb46a697, type: 3}
   - updateLevelSprite: {fileID: -3353039014164046180, guid: 33b3da5edb7105d4c91ef4d4336f058e, type: 3}
   nextUpdate: 0
