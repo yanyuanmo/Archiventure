@@ -131,11 +131,16 @@ namespace Archiventure
         public void OnSave()
         {
             SerializationManager.Save(save);
+            //save.resources = ResourceManager.Instance.GetResourceData();
         }
 
         public void OnLoad()
         {
             save = SerializationManager.Load();
+            //if (save.resources != null)
+            //{
+            //    ResourceManager.Instance.LoadResourceData(save.resources);
+            //}
 
             for (int i = 0; i < save.buildings.Count; i++)
             {

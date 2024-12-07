@@ -8,5 +8,6 @@ namespace Archiventure
     public class SaveData
     {
         public List<BuildingData> buildings = new List<BuildingData>();
+        //public ResourceManager.ResourceData resources;
     }
 }
