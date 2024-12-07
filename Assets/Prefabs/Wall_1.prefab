@@ -179,7 +179,11 @@ MonoBehaviour:
   arrows: {fileID: 2441819130068165685}
   updatePanel: {fileID: 6144351927680095314}
   tile: {fileID: 8467095420243899955}
+  goldGenerationPerSecond: 1
+  populationProvided: 2
+  buildCost: 1000
   updates:
+  - updateLevelSprite: {fileID: 21300000, guid: 560b9fe101b68034fb7b3734060574b9, type: 3}
   - updateLevelSprite: {fileID: 21300000, guid: e94a83b3969bcf14e80a0cfe9ac46f5f, type: 3}
   - updateLevelSprite: {fileID: 21300000, guid: e8795d68a77f8e14a8a9b3cceb0c48da, type: 3}
   - updateLevelSprite: {fileID: 21300000, guid: a6abb6cd4b395314993c92432f60caff, type: 3}

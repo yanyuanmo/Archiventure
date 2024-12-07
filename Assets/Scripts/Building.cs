@@ -37,13 +37,13 @@ namespace Archiventure
         public Tile tile;
         private SpriteRenderer spriteRenderer;
 
-        //[Header("Resource Generation")]
-        //public float goldGenerationPerSecond = 100f;
-        //public int populationProvided = 10;
-        //public float buildCost = 100f;
+        [Header("Resource Generation")]
+        public float goldGenerationPerSecond;
+        public int populationProvided;
+        public float buildCost;
 
-        //private float timeSinceLastUpdate = 0f;
-        //private const float UPDATE_INTERVAL = 1f;
+        private float timeSinceLastUpdate = 0f;
+        private const float UPDATE_INTERVAL = 1f;
 
 
         [System.Serializable]
@@ -65,12 +65,11 @@ namespace Archiventure
             slayers = GetComponent<SortingLayers>();
             spriteRenderer = GetComponent<SpriteRenderer>();
 
-            //if (buildingState == BuildingState.firstStart)
-            //{
-            //    ResourceManager.Instance.SpendGold(buildCost);
-            //}
-
-            //ResourceManager.Instance.AddPopulation(populationProvided);
+            if (buildingState == BuildingState.firstStart)
+            {
+                ResourceManager.Instance.SpendGold(buildCost);
+                ResourceManager.Instance.AddPopulation(populationProvided);
+            }
 
         }
 
@@ -97,12 +96,12 @@ namespace Archiventure
                 slayers.number = -0.2f;
                 tile.stayingState = true;
 
-                //timeSinceLastUpdate += Time.fixedDeltaTime;
-                //if (timeSinceLastUpdate >= UPDATE_INTERVAL)
-                //{
-                //    ResourceManager.Instance.AddGold(goldGenerationPerSecond * UPDATE_INTERVAL);
-                //    timeSinceLastUpdate = 0f;
-                //}
+                timeSinceLastUpdate += Time.fixedDeltaTime;
+                if (timeSinceLastUpdate >= UPDATE_INTERVAL)
+                {
+                    ResourceManager.Instance.AddGold(goldGenerationPerSecond * UPDATE_INTERVAL);
+                    timeSinceLastUpdate = 0f;
+                }
             }
             if (buildingState == BuildingState.replacing)
             {
@@ -258,7 +257,7 @@ namespace Archiventure
             }
             if (buildingState == BuildingState.destroying)
             {
-                //ResourceManager.Instance.AddPopulation(-populationProvided); // remove visitor
+                ResourceManager.Instance.AddPopulation(-populationProvided); // remove visitor
 
                 buildingState = BuildingState.staying;
                 mouseDrag = false;

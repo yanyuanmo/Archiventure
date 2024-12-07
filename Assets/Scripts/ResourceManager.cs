@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections.Generic;
 
 namespace Archiventure
 {
@@ -20,11 +19,10 @@ namespace Archiventure
         public int population;  
 
         [Header("UI Elements")]
-        public Text goldText;       
-        public Text populationText; 
+        //[SerializeField] private GameObject resourceCanvas;
+        [SerializeField] public Text goldText;
+        [SerializeField] public Text populationText; 
 
-        [Header("Income Settings")]
-        public float baseGoldIncomePerSecond = 1f; // base income
 
         private void Awake()
         {
@@ -41,14 +39,7 @@ namespace Archiventure
 
         private void Update()
         {
-            // Increase gold by time
-            UpdateResources();
             UpdateUI();
-        }
-
-        private void UpdateResources()
-        {
-            gold += baseGoldIncomePerSecond * Time.deltaTime;
         }
 
         private void UpdateUI()

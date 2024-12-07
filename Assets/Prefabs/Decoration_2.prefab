@@ -179,6 +179,9 @@ MonoBehaviour:
   arrows: {fileID: 2441819130068165685}
   updatePanel: {fileID: 6144351927680095314}
   tile: {fileID: 8467095420243899955}
+  goldGenerationPerSecond: 2
+  populationProvided: 15
+  buildCost: 3500
   updates: []
   nextUpdate: 0
 --- !u!114 &1375114047012903434
