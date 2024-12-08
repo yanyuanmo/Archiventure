@@ -64,13 +64,6 @@ namespace Archiventure
             gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
             slayers = GetComponent<SortingLayers>();
             spriteRenderer = GetComponent<SpriteRenderer>();
-
-            if (buildingState == BuildingState.firstStart)
-            {
-                ResourceManager.Instance.SpendGold(buildCost);
-                ResourceManager.Instance.AddPopulation(populationProvided);
-            }
-
         }
 
         //private void Update()
@@ -196,7 +189,6 @@ namespace Archiventure
         }
 
         void OnMouseDrag()
-        // private void OnMouseDragHandler()
         {
             if (mouseDrag == true)
             {
@@ -229,17 +221,28 @@ namespace Archiventure
         {
             if (buildingState == BuildingState.firstStart)
             {
-                buildingState = BuildingState.staying;
-                currentPosition = transform.position;
-                mouseDrag = false;
-                gameManager.mainPanel.SetActive(true);
+                if (ResourceManager.Instance.SpendGold(buildCost))
+                {
+                    buildingState = BuildingState.staying;
+                    currentPosition = transform.position;
+                    mouseDrag = false;
+                    gameManager.mainPanel.SetActive(true);
 
-                buildingData.buildingType = buildingType;
-                buildingData.position = transform.position;
-                buildingData.rotation = transform.rotation;
-                buildingData.level = nextUpdate;
-                gameManager.save.buildings.Add(buildingData);
-                gameManager.OnSave();
+                    buildingData.buildingType = buildingType;
+                    buildingData.position = transform.position;
+                    buildingData.rotation = transform.rotation;
+                    buildingData.level = nextUpdate;
+
+                    gameManager.save.buildings.Add(buildingData);
+                    gameManager.OnSave();
+
+                    ResourceManager.Instance.AddPopulation(populationProvided);
+
+                }
+                else 
+                {
+                    NoButton();
+                }
             }
             if (buildingState == BuildingState.replacing)
             {
