@@ -130,17 +130,25 @@ namespace Archiventure
 
         public void OnSave()
         {
+            //SerializationManager.Save(save);
+            //save.resources = ResourceManager.Instance.GetResourceData();
+            
+            save.gold = ResourceManager.Instance.gold;
+            save.population = ResourceManager.Instance.population;
+
+            
             SerializationManager.Save(save);
-            save.resources = ResourceManager.Instance.GetResourceData();
         }
 
         public void OnLoad()
         {
             save = SerializationManager.Load();
-            if (save.resources != null)
-            {
-                ResourceManager.Instance.LoadResourceData(save.resources);
-            }
+            //if (save.resources != null)
+            //{
+            //    ResourceManager.Instance.LoadResourceData(save.resources);
+            //}
+            ResourceManager.Instance.gold = save.gold;
+            ResourceManager.Instance.population = save.population;
 
             for (int i = 0; i < save.buildings.Count; i++)
             {
@@ -154,5 +162,12 @@ namespace Archiventure
                 obj.transform.rotation = currentBuilding.rotation;
             }
         }
+
+        #if UNITY_EDITOR
+        private void OnApplicationQuit()
+        {
+            OnSave();  // quit and save
+        }
+        #endif
     }
 }

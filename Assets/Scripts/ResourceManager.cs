@@ -7,12 +7,12 @@ namespace Archiventure
     {
         public static ResourceManager Instance { get; private set; }
 
-        [System.Serializable]
-        public class ResourceData
-        {
-            public float gold;
-            public int population;
-        }
+        //[System.Serializable]
+        //public class ResourceData
+        //{
+        //    public float gold;
+        //    public int population;
+        //}
 
         [Header("Resources")]
         public float gold; 
@@ -40,6 +40,11 @@ namespace Archiventure
         private void Update()
         {
             UpdateUI();
+            UpdateResources();
+        }
+
+        private void UpdateResources()
+        {
         }
 
         private void UpdateUI()
@@ -70,19 +75,19 @@ namespace Archiventure
             population += amount;
         }
 
-        public ResourceData GetResourceData()
-        {
-            return new ResourceData
-            {
-                gold = this.gold,
-                population = this.population
-            };
-        }
+        //public ResourceData GetResourceData()
+        //{
+        //    return new ResourceData
+        //    {
+        //        gold = this.gold,
+        //        population = this.population
+        //    };
+        //}
 
-        public void LoadResourceData(ResourceData data)
-        {
-            this.gold = data.gold;
-            this.population = data.population;
-        }
+        //public void LoadResourceData(ResourceData data)
+        //{
+        //    this.gold = data.gold;
+        //    this.population = data.population;
+        //}
     }
 }
