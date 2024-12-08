@@ -180,7 +180,7 @@ MonoBehaviour:
   updatePanel: {fileID: 6144351927680095314}
   tile: {fileID: 8467095420243899955}
   goldGenerationPerSecond: 1
-  populationProvided: 2
+  populationProvided: 6
   buildCost: 1000
   updates:
   - updateLevelSprite: {fileID: 21300000, guid: 560b9fe101b68034fb7b3734060574b9, type: 3}
