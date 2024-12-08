@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
+using TMPro;
 
 namespace Archiventure
 {
@@ -34,6 +36,11 @@ namespace Archiventure
         [HideInInspector]
         public bool destroyMode;
 
+        [Header("Shopping tip")]
+        [SerializeField] private TextMeshProUGUI tipText;      
+        private float tipShowTime = 1.5f;           
+        private float tipTimer;                     
+
         void Start()
         {
             mainPanel.SetActive(true);
@@ -56,6 +63,17 @@ namespace Archiventure
             {
                 cameraController.movement = true;
             }
+
+            // Set up the tip text
+            if (tipText.gameObject.activeSelf)
+            {
+                tipTimer -= Time.deltaTime;
+                if (tipTimer <= 0)
+                {
+                    tipText.gameObject.SetActive(false);
+                }
+            }
+
         }
 
         //Buttons
@@ -83,6 +101,26 @@ namespace Archiventure
         public void BuyBuilding(int number)
         {
             buildingNumber = number;
+
+            // Get building prefab
+            GameObject buildingPrefab = structureArray[buildingNumber];
+            Building script = buildingPrefab.GetComponent<Building>();
+
+            // Check if the user has enough gold
+            if (ResourceManager.Instance.gold < script.buildCost)
+            {
+                // Update the position of tip text
+                Vector3 mousePosition = Mouse.current.position.ReadValue();
+                mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+
+                tipText.transform.position = new Vector2(mousePosition.x, mousePosition.y);
+
+                tipText.gameObject.SetActive(true);
+                tipTimer = tipShowTime;
+
+                return;
+            }
+
             cameraController.movement = false;
             shop.SetActive(false);
             GameObject house = Instantiate(structureArray[buildingNumber], spawnPointOfBuildings.transform.position, Quaternion.identity);
