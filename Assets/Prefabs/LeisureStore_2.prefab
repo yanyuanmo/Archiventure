@@ -132,7 +132,7 @@ BoxCollider2D:
   m_Offset: {x: 0.005107701, y: -0.10651004}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.55, y: 0.5}
+    pivot: {x: 0.5, y: 0.15}
     oldSize: {x: 2.16, y: 3.72}
     newSize: {x: 1.08, y: 1.63}
     adaptiveTilingThreshold: 0.5
@@ -182,7 +182,8 @@ MonoBehaviour:
   goldGenerationPerSecond: 4
   populationProvided: 25
   buildCost: 4000
-  updates: []
+  updates:
+  - updateLevelSprite: {fileID: -7168462997995351782, guid: e6e82bac754fa7d4f9963781825a7b84, type: 3}
   nextUpdate: 0
 --- !u!114 &1375114047012903434
 MonoBehaviour:
@@ -337,7 +338,7 @@ Transform:
   m_GameObject: {fileID: 2441819130068165685}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -728,7 +729,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8664970458621450860
 RectTransform:
   m_ObjectHideFlags: 0
@@ -747,7 +748,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.10399999}
+  m_AnchoredPosition: {x: 0, y: 1.2}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6144351927680095314
@@ -765,7 +766,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7629367424328517459
 RectTransform:
   m_ObjectHideFlags: 0
