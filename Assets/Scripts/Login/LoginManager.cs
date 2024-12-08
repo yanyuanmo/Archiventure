@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using PlayFab;
 using PlayFab.ClientModels;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class LoginManager : MonoBehaviour
 {
@@ -72,7 +73,7 @@ public class LoginManager : MonoBehaviour
     {
         messageText.text = "Login succeeded!";
         Debug.Log("Login succeeded!");
-        // SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("SelectCultureScene");
     }
 
     private void OnLoginFailure(PlayFabError error)
