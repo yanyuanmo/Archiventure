@@ -260,11 +260,16 @@ namespace Archiventure
             }
             if (buildingState == BuildingState.destroying)
             {
-                ResourceManager.Instance.AddPopulation(-populationProvided); // remove visitor
-
                 buildingState = BuildingState.staying;
                 mouseDrag = false;
                 gameManager.mainPanel.SetActive(false);
+
+                // Return building cost£¨80%£©
+                float refundAmount = buildCost * 0.8f;
+                ResourceManager.Instance.AddGold(refundAmount);
+
+                // Remove visitor
+                ResourceManager.Instance.AddPopulation(-populationProvided);
 
                 int numberInArray3 = NumberOfElementFromSaveArray();
 
