@@ -138,29 +138,54 @@ namespace Archiventure
 
             
             SerializationManager.Save(save);
+            CloudSaveManager.Instance.SaveToCloud(save);
+
         }
 
         public void OnLoad()
         {
-            save = SerializationManager.Load();
-            //if (save.resources != null)
+            //save = SerializationManager.Load();
+            ////if (save.resources != null)
+            ////{
+            ////    ResourceManager.Instance.LoadResourceData(save.resources);
+            ////}
+            //ResourceManager.Instance.gold = save.gold;
+            //ResourceManager.Instance.population = save.population;
+
+            //for (int i = 0; i < save.buildings.Count; i++)
             //{
-            //    ResourceManager.Instance.LoadResourceData(save.resources);
+            //    BuildingData currentBuilding = save.buildings[i];
+            //    GameObject obj = Instantiate(structureArray[(int)currentBuilding.buildingType]);
+
+            //    Building structure = obj.GetComponent<Building>();
+            //    structure.nextUpdate = currentBuilding.level;
+
+            //    obj.transform.position = currentBuilding.position;
+            //    obj.transform.rotation = currentBuilding.rotation;
             //}
-            ResourceManager.Instance.gold = save.gold;
-            ResourceManager.Instance.population = save.population;
 
-            for (int i = 0; i < save.buildings.Count; i++)
+            CloudSaveManager.Instance.LoadFromCloud(cloudSave =>
             {
-                BuildingData currentBuilding = save.buildings[i];
-                GameObject obj = Instantiate(structureArray[(int)currentBuilding.buildingType]);
+                save = cloudSave;
 
-                Building structure = obj.GetComponent<Building>();
-                structure.nextUpdate = currentBuilding.level;
-                
-                obj.transform.position = currentBuilding.position;
-                obj.transform.rotation = currentBuilding.rotation;
-            }
+                // Save to local as well
+                SerializationManager.Save(save);
+
+                for (int i = 0; i < save.buildings.Count; i++)
+                {
+                    BuildingData currentBuilding = save.buildings[i];
+                    GameObject obj = Instantiate(structureArray[(int)currentBuilding.buildingType]);
+
+                    Building structure = obj.GetComponent<Building>();
+                    structure.nextUpdate = currentBuilding.level;
+
+                    obj.transform.position = currentBuilding.position;
+                    obj.transform.rotation = currentBuilding.rotation;
+                }
+
+                ResourceManager.Instance.gold = save.gold;
+                ResourceManager.Instance.population = save.population;
+            });
         }
 
         #if UNITY_EDITOR
