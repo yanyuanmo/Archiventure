@@ -8,8 +8,6 @@ namespace Archiventure
 {
     public class AchievementManager : MonoBehaviour
     {
-        public static AchievementManager Instance { get; private set; }
-
         [System.Serializable]
         public class AchievementData
         {
@@ -20,7 +18,7 @@ namespace Archiventure
         }
 
         [SerializeField]
-        private List<AchievementData> achievementsList = new List<AchievementData>
+        public List<AchievementData> achievementsList = new List<AchievementData>
         {
             new AchievementData { id = "FIRST_BUILDING", displayName = "First Building", goldReward = 100f },
             new AchievementData { id = "CITY_EXPANSION", displayName = "City Expansion", goldReward = 500f },
@@ -28,22 +26,10 @@ namespace Archiventure
             new AchievementData { id = "WEALTH_ACCUMULATION", displayName = "Wealth Accumulation", goldReward = 2000f }
         };
 
-        // private AchievementNotification notificationPanel;
         [Header("Game Objects")]
         public GameObject notificationPanel;
 
-        private void Awake()
-        {
-            if (Instance == null)
-            {
-                Instance = this;
-                DontDestroyOnLoad(gameObject);
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
-        }
+        public AchievementData lastUnlockedAchievement;
 
         private void Start()
         {
@@ -52,59 +38,17 @@ namespace Archiventure
 
         public void Init()
         {
-            //if (SceneManager.GetActiveScene().name == "MainMenu")
-            //{
-            //    GameObject notificationObj = GameObject.Find("NotificationPanel");
-            //    if (notificationObj != null)
-            //    {
-            //        notificationPanel = notificationObj.GetComponent<AchievementNotification>();
-            //        Debug.Log("Found notification panel");
-            //    }
-            //    else
-            //    {
-            //        Debug.LogWarning("NotificationPanel not found in MainMenu scene");
-            //    }
-            //}
             if (notificationPanel != null)
             {
                 Debug.Log("Found notification panel");
             }
             else
             {
-                Debug.Log("xiba");
+                Debug.Log("Not found notification panel");
             }
         }
 
-        public void CheckAchievements(GameManager gameManager)
-        {
-            if (notificationPanel == null) Init();
-
-            // Check first building achievement
-            if (!achievementsList[0].isUnlocked && gameManager.save.buildings.Count > 0)
-            {
-                UnlockAchievement("FIRST_BUILDING");
-            }
-
-            // Check city expansion achievement
-            if (!achievementsList[1].isUnlocked && gameManager.save.buildings.Count >= 10)
-            {
-                UnlockAchievement("CITY_EXPANSION");
-            }
-
-            // Check population growth achievement
-            if (!achievementsList[2].isUnlocked && ResourceManager.Instance.population >= 100)
-            {
-                UnlockAchievement("POPULATION_GROWTH");
-            }
-
-            // Check wealth accumulation achievement
-            if (!achievementsList[3].isUnlocked && ResourceManager.Instance.gold >= 50000)
-            {
-                UnlockAchievement("WEALTH_ACCUMULATION");
-            }
-        }
-
-        private void UnlockAchievement(string achievementId)
+        public void UnlockAchievement(string achievementId)
         {
             var achievement = achievementsList.Find(a => a.id == achievementId);
             if (achievement != null && !achievement.isUnlocked)
@@ -114,19 +58,11 @@ namespace Archiventure
 
                 if (notificationPanel != null)
                 {
-                    //notificationPanel.ShowAchievement(
-                    //    achievement.displayName,
-                    //    achievement.goldReward,
-                    //    () => {
-                    //        ResourceManager.Instance.AddGold(achievement.goldReward);
-                    //        SaveAchievement(achievementId);
-                    //    }
-                    //);
                     notificationPanel.SetActive(true);
                     AchievementNotification script = notificationPanel.GetComponent<AchievementNotification>();
 
                     script.achievementText.text = $"Achievement Unlocked!\n{achievement.displayName}\nReward: {achievement.goldReward} Gold";
-                    //ResourceManager.Instance.AddGold(achievement.goldReward);
+                    lastUnlockedAchievement = achievement;
                     SaveAchievement(achievementId);
                 }
             }

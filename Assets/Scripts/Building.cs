@@ -45,8 +45,6 @@ namespace Archiventure
         private float timeSinceLastUpdate = 0f;
         private const float UPDATE_INTERVAL = 1f;
 
-        private AchievementManager achievementManager;
-
 
         [System.Serializable]
         public class Update
@@ -95,7 +93,7 @@ namespace Archiventure
                 timeSinceLastUpdate += Time.fixedDeltaTime;
                 if (timeSinceLastUpdate >= UPDATE_INTERVAL)
                 {
-                    ResourceManager.Instance.AddGold(goldGenerationPerSecond * UPDATE_INTERVAL);
+                    gameManager.resourceManager.AddGold(goldGenerationPerSecond * UPDATE_INTERVAL);
                     timeSinceLastUpdate = 0f;
                 }
             }
@@ -224,7 +222,7 @@ namespace Archiventure
         {
             if (buildingState == BuildingState.firstStart)
             {
-                if (ResourceManager.Instance.SpendGold(buildCost))
+                if (gameManager.resourceManager.SpendGold(buildCost))
                 {
                     buildingState = BuildingState.staying;
                     currentPosition = transform.position;
@@ -239,7 +237,7 @@ namespace Archiventure
                     gameManager.save.buildings.Add(buildingData);
                     gameManager.OnSave();
 
-                    ResourceManager.Instance.AddPopulation(populationProvided);
+                    gameManager.resourceManager.AddPopulation(populationProvided);
 
                 }
                 else 
@@ -269,10 +267,10 @@ namespace Archiventure
 
                 // Return building cost£¨80%£©
                 float refundAmount = buildCost * 0.8f;
-                ResourceManager.Instance.AddGold(refundAmount);
+                gameManager.resourceManager.AddGold(refundAmount);
 
                 // Remove visitor
-                ResourceManager.Instance.AddPopulation(-populationProvided);
+                gameManager.resourceManager.AddPopulation(-populationProvided);
 
                 int numberInArray3 = NumberOfElementFromSaveArray();
 

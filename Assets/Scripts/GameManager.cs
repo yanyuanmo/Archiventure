@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 namespace Archiventure
 {
@@ -16,6 +17,8 @@ namespace Archiventure
 
         [Header("Scripts")]
         public CameraController2D cameraController;
+        public ResourceManager resourceManager;
+        public AchievementManager achievementManager;
 
         [Header("Game Objects")]
         public GameObject mainPanel;
@@ -39,7 +42,7 @@ namespace Archiventure
         [Header("Shopping tip")]
         [SerializeField] private TextMeshProUGUI tipText;      
         private float tipShowTime = 1.5f;           
-        private float tipTimer;                     
+        private float tipTimer;
 
         void Start()
         {
@@ -51,6 +54,35 @@ namespace Archiventure
             destroyMode = false;
             OnLoad();
             //OpenShop();
+        }
+
+        public void CheckAchievements()
+        {
+            if (achievementManager.notificationPanel == null) achievementManager.Init();
+
+            // Check first building achievement
+            if (!achievementManager.achievementsList[0].isUnlocked && save.buildings.Count > 0)
+            {
+                achievementManager.UnlockAchievement("FIRST_BUILDING");
+            }
+
+            // Check city expansion achievement
+            if (!achievementManager.achievementsList[1].isUnlocked && save.buildings.Count >= 10)
+            {
+                achievementManager.UnlockAchievement("CITY_EXPANSION");
+            }
+
+            // Check population growth achievement
+            if (!achievementManager.achievementsList[2].isUnlocked && resourceManager.population >= 100)
+            {
+                achievementManager.UnlockAchievement("POPULATION_GROWTH");
+            }
+
+            // Check wealth accumulation achievement
+            if (!achievementManager.achievementsList[3].isUnlocked && resourceManager.gold >= 50000)
+            {
+                achievementManager.UnlockAchievement("WEALTH_ACCUMULATION");
+            }
         }
 
         void Update()
@@ -75,9 +107,9 @@ namespace Archiventure
             }
 
             // Check the achievements
-            if (AchievementManager.Instance != null)
+            if (achievementManager != null)
             {
-                AchievementManager.Instance.CheckAchievements(this);
+                CheckAchievements();
             }
         }
 
@@ -88,6 +120,11 @@ namespace Archiventure
             mainPanel.SetActive(false);
             shop.SetActive(true);
             buildingSelected = true;
+        }
+
+        public void CloseAchivementButton()
+        {
+            resourceManager.AddGold(achievementManager.lastUnlockedAchievement.goldReward);
         }
 
         //This button close everything, so I used it for every Panel
@@ -112,7 +149,7 @@ namespace Archiventure
             Building script = buildingPrefab.GetComponent<Building>();
 
             // Check if the user has enough gold
-            if (ResourceManager.Instance.gold < script.buildCost)
+            if (resourceManager.gold < script.buildCost)
             {
                 // Update the position of tip text
                 Vector3 mousePosition = Mouse.current.position.ReadValue();
@@ -176,8 +213,8 @@ namespace Archiventure
             //SerializationManager.Save(save);
             //save.resources = ResourceManager.Instance.GetResourceData();
             
-            save.gold = ResourceManager.Instance.gold;
-            save.population = ResourceManager.Instance.population;
+            save.gold = resourceManager.gold;
+            save.population = resourceManager.population;
 
             
             SerializationManager.Save(save);
@@ -226,16 +263,31 @@ namespace Archiventure
                     obj.transform.rotation = currentBuilding.rotation;
                 }
 
-                ResourceManager.Instance.gold = save.gold;
-                ResourceManager.Instance.population = save.population;
+                resourceManager.gold = save.gold;
+                resourceManager.population = save.population;
             });
         }
 
-        #if UNITY_EDITOR
+        public void ReturnToCultureSelection()
+        {
+            OnSave();
+
+            // Wait a short moment to ensure save is complete
+            StartCoroutine(LoadCultureSelectionSceneWithDelay());
+        }
+
+        private System.Collections.IEnumerator LoadCultureSelectionSceneWithDelay()
+        {
+            // Add a small delay to ensure save is completed
+            yield return new WaitForSeconds(0.5f);
+            SceneManager.LoadScene("SelectCultureScene");
+        }
+
+#if UNITY_EDITOR
         private void OnApplicationQuit()
         {
             OnSave();  // quit and save
         }
-        #endif
+#endif
     }
 }
