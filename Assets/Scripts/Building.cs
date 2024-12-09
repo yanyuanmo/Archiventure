@@ -45,6 +45,8 @@ namespace Archiventure
         private float timeSinceLastUpdate = 0f;
         private const float UPDATE_INTERVAL = 1f;
 
+        private AchievementManager achievementManager;
+
 
         [System.Serializable]
         public class Update
@@ -53,6 +55,7 @@ namespace Archiventure
         }
         public Update[] updates;
         public int nextUpdate;
+
 
 
         void Start()

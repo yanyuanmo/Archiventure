@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class LoginManager : MonoBehaviour
 {
+    public static event System.Action OnLoginSuccessful;  // OnLoginSuccessful
+
     [Header("UI References")]
     [SerializeField] private TMP_InputField usernameInput;
     [SerializeField] private TMP_InputField passwordInput;
@@ -69,10 +71,11 @@ public class LoginManager : MonoBehaviour
         );
     }
 
-    private void OnLoginSuccess(LoginResult result)
+    public void OnLoginSuccess(LoginResult result)
     {
         messageText.text = "Login succeeded!";
         Debug.Log("Login succeeded!");
+        OnLoginSuccessful?.Invoke();
         SceneManager.LoadScene("SelectCultureScene");
     }
 

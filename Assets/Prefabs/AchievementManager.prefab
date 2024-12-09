@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3469645693691373970
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5568506384554333757}
+  - component: {fileID: 3583683801581805170}
+  m_Layer: 0
+  m_Name: AchievementManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5568506384554333757
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3469645693691373970}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.428395, y: -1.0044732, z: -27.057545}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3583683801581805170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3469645693691373970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a73a0bd74f2f83441b9505ce8769cb24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  achievementsList:
+  - id: FIRST_BUILDING
+    displayName: First Building
+    goldReward: 100
+    isUnlocked: 0
+  - id: CITY_EXPANSION
+    displayName: City Expansion
+    goldReward: 500
+    isUnlocked: 0
+  - id: POPULATION_GROWTH
+    displayName: Population Growth
+    goldReward: 1000
+    isUnlocked: 0
+  - id: WEALTH_ACCUMULATION
+    displayName: Wealth Accumulation
+    goldReward: 2000
+    isUnlocked: 0

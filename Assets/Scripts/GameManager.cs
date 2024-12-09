@@ -74,6 +74,11 @@ namespace Archiventure
                 }
             }
 
+            // Check the achievements
+            if (AchievementManager.Instance != null)
+            {
+                AchievementManager.Instance.CheckAchievements(this);
+            }
         }
 
         //Buttons
