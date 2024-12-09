@@ -3,6 +3,7 @@ using PlayFab;
 using PlayFab.ClientModels;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using System.Threading;
 
 namespace Archiventure
 {
@@ -34,6 +35,8 @@ namespace Archiventure
         private void Start()
         {
             LoadAchievements();
+            Thread.Sleep(2000);
+            Debug.Log("guoplai");
         }
 
         public void Init()
@@ -92,10 +95,12 @@ namespace Archiventure
                 result => {
                     if (result.Data != null)
                     {
+                        Debug.Log("Found user data");
                         foreach (var achievement in achievementsList)
                         {
                             if (result.Data.ContainsKey(achievement.id))
                             {
+                                Debug.Log("Found achievement");
                                 achievement.isUnlocked = bool.Parse(result.Data[achievement.id].Value);
                             }
                         }

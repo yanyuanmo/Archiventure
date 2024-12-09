@@ -158,41 +158,49 @@ namespace Archiventure
         void OnMouseDown()
         //private void OnMouseDownHandler()
         {
-            zCordinateOfMouse = Camera.main.WorldToScreenPoint(transform.position).z;
-            mouseOffset = transform.position - mouseWorldPos();
-
-            if (gameManager.buildingSelected == false)
+            if (Mouse.current.leftButton.wasPressedThisFrame ||
+                (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.isPressed)) 
             {
-                if (gameManager.replaceMode == true)
+                zCordinateOfMouse = Camera.main.WorldToScreenPoint(transform.position).z;
+                mouseOffset = transform.position - mouseWorldPos();
+
+                if (gameManager.buildingSelected == false)
                 {
-                    buildingState = BuildingState.replacing;
-                    gameManager.buildingSelected = true;
-                    mouseDrag = true;
-                }
-                else if (gameManager.destroyMode == true)
-                {
-                    buildingState = BuildingState.destroying;
-                    gameManager.buildingSelected = true;
-                    mouseDrag = false;
-                }
-                else
-                {
-                    if (nextUpdate + 1 != updates.Length)
+                    if (gameManager.replaceMode == true)
                     {
-                        buildingState = BuildingState.updating;
+                        buildingState = BuildingState.replacing;
                         gameManager.buildingSelected = true;
+                        mouseDrag = true;
                     }
-                    mouseDrag = false;
+                    else if (gameManager.destroyMode == true)
+                    {
+                        buildingState = BuildingState.destroying;
+                        gameManager.buildingSelected = true;
+                        mouseDrag = false;
+                    }
+                    else
+                    {
+                        if (nextUpdate + 1 != updates.Length)
+                        {
+                            buildingState = BuildingState.updating;
+                            gameManager.buildingSelected = true;
+                        }
+                        mouseDrag = false;
+                    }
+                    gameManager.selectedBuilding = gameObject;
+
                 }
-                gameManager.selectedBuilding = gameObject;
 
             }
+
         }
 
         void OnMouseDrag()
         {
             if (mouseDrag == true)
             {
+                if ((Touchscreen.current != null && Touchscreen.current.primaryTouch.press.isPressed)
+                    || Mouse.current.leftButton.isPressed)
                 transform.position = mouseWorldPos() + mouseOffset;
             }
         }
@@ -201,6 +209,13 @@ namespace Archiventure
         {
             Vector3 mousePosition = Mouse.current.position.ReadValue();
             //Vector3 mousePosition = Input.mousePosition;
+
+            // For touch input
+            if (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.isPressed)
+            {
+                mousePosition = Touchscreen.current.primaryTouch.position.ReadValue();
+            }
+
             mousePosition.z = zCordinateOfMouse;
             return Camera.main.ScreenToWorldPoint(mousePosition);
         }

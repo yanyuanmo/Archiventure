@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem.EnhancedTouch;
+using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 
 namespace Archiventure
 {
@@ -43,6 +45,16 @@ namespace Archiventure
         [SerializeField] private TextMeshProUGUI tipText;      
         private float tipShowTime = 1.5f;           
         private float tipTimer;
+
+        private void OnEnable()
+        {
+            EnhancedTouchSupport.Enable();
+        }
+
+        private void OnDisable()
+        {
+            EnhancedTouchSupport.Disable();
+        }
 
         void Start()
         {
@@ -152,14 +164,41 @@ namespace Archiventure
             if (resourceManager.gold < script.buildCost)
             {
                 // Update the position of tip text
-                Vector3 mousePosition = Mouse.current.position.ReadValue();
-                mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+                //Vector3 mousePosition = Mouse.current.position.ReadValue();
+                //if (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.isPressed)
+                //{
+                //    mousePosition = Touchscreen.current.primaryTouch.position.ReadValue();
+                //}
 
-                tipText.transform.position = new Vector2(mousePosition.x, mousePosition.y);
+                //mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+
+                //tipText.transform.position = new Vector2(mousePosition.x, mousePosition.y);
+
+                //tipText.gameObject.SetActive(true);
+                //tipTimer = tipShowTime;
+
+                //return;
+
+                Vector3 mousePosition;
+
+                // 检查是否有触摸输入
+                if (Touch.activeTouches.Count > 0)
+                {
+                    // 使用第一个触摸点的位置
+                    mousePosition = Touch.activeTouches[0].screenPosition;
+                }
+                else
+                {
+                    // 使用鼠标位置
+                    mousePosition = Mouse.current.position.ReadValue();
+                }
+
+                // 转换屏幕坐标到世界坐标
+                Vector3 worldPosition = Camera.main.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, 0));
+                tipText.transform.position = new Vector2(worldPosition.x, worldPosition.y);
 
                 tipText.gameObject.SetActive(true);
                 tipTimer = tipShowTime;
-
                 return;
             }
 

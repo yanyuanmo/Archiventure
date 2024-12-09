@@ -291,12 +291,20 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 77397075}
+    - target: {fileID: 652489505209265613, guid: 1c42de4dae3db104896eaeae61203a1b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 864044162990271973, guid: 1c42de4dae3db104896eaeae61203a1b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 864044162990271973, guid: 1c42de4dae3db104896eaeae61203a1b, type: 3}
       propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 864044162990271973, guid: 1c42de4dae3db104896eaeae61203a1b, type: 3}
+      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 864044162990271973, guid: 1c42de4dae3db104896eaeae61203a1b, type: 3}
@@ -353,6 +361,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2718436568664286771, guid: 1c42de4dae3db104896eaeae61203a1b, type: 3}
       propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2718436568664286771, guid: 1c42de4dae3db104896eaeae61203a1b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2718436568664286771, guid: 1c42de4dae3db104896eaeae61203a1b, type: 3}
+      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2718436568664286771, guid: 1c42de4dae3db104896eaeae61203a1b, type: 3}
@@ -512,12 +528,32 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5274244810683234305, guid: 1c42de4dae3db104896eaeae61203a1b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5274244810683234305, guid: 1c42de4dae3db104896eaeae61203a1b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5274244810683234305, guid: 1c42de4dae3db104896eaeae61203a1b, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5274244810683234305, guid: 1c42de4dae3db104896eaeae61203a1b, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071006327605060681, guid: 1c42de4dae3db104896eaeae61203a1b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071006327605060681, guid: 1c42de4dae3db104896eaeae61203a1b, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071006327605060681, guid: 1c42de4dae3db104896eaeae61203a1b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 439.05103
       objectReference: {fileID: 0}
     - target: {fileID: 6386091187636642828, guid: 1c42de4dae3db104896eaeae61203a1b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -561,6 +597,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8246245173696105863, guid: 1c42de4dae3db104896eaeae61203a1b, type: 3}
       propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8246245173696105863, guid: 1c42de4dae3db104896eaeae61203a1b, type: 3}
+      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8246245173696105863, guid: 1c42de4dae3db104896eaeae61203a1b, type: 3}
@@ -705,7 +745,7 @@ MonoBehaviour:
   m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_DeselectOnBackgroundClick: 1
-  m_PointerBehavior: 0
+  m_PointerBehavior: 2
   m_CursorLockBehavior: 0
   m_ScrollDeltaPerTick: 6
 --- !u!114 &1128894446

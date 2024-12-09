@@ -11,7 +11,7 @@
 				}
 			],
 			"type" : "UNINITIALIZED",
-			"value" : "arm64-v8a"
+			"value" : "x86_64"
 		},
 		{
 			"name" : "ANDROID_NDK",
@@ -75,7 +75,7 @@
 				}
 			],
 			"type" : "UNINITIALIZED",
-			"value" : "arm64-v8a"
+			"value" : "x86_64"
 		},
 		{
 			"name" : "CMAKE_ANDROID_NDK",
@@ -127,7 +127,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "k:/cs5520/project/Unity_project/Archiventure/.utmp/RelWithDebInfo/3j1s3y44/arm64-v8a"
+			"value" : "k:/cs5520/project/Unity_project/Archiventure/.utmp/RelWithDebInfo/3j1s3y44/x86_64"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -200,22 +200,6 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "K:/Unity/6000.0.27f1/Editor/Data/PlaybackEngines/AndroidPlayer/SDK/cmake/3.22.1/bin/ctest.exe"
-		},
-		{
-			"name" : "CMAKE_CXX_COMPILER",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER_AR",
@@ -328,22 +312,6 @@
 			],
 			"type" : "STRING",
 			"value" : "-O2 -g -DNDEBUG"
-		},
-		{
-			"name" : "CMAKE_C_COMPILER",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
 		},
 		{
 			"name" : "CMAKE_C_COMPILER_AR",
@@ -599,7 +567,7 @@
 				}
 			],
 			"type" : "UNINITIALIZED",
-			"value" : "K:\\cs5520\\project\\Unity_project\\Archiventure\\.utmp\\RelWithDebInfo\\3j1s3y44\\prefab\\arm64-v8a\\prefab"
+			"value" : "K:\\cs5520\\project\\Unity_project\\Archiventure\\.utmp\\RelWithDebInfo\\3j1s3y44\\prefab\\x86_64\\prefab"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -695,7 +663,7 @@
 				}
 			],
 			"type" : "UNINITIALIZED",
-			"value" : "K:\\cs5520\\project\\Unity_project\\Archiventure\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\unityLibrary\\build\\intermediates\\cxx\\RelWithDebInfo\\3j1s3y44\\obj\\arm64-v8a"
+			"value" : "K:\\cs5520\\project\\Unity_project\\Archiventure\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\unityLibrary\\build\\intermediates\\cxx\\RelWithDebInfo\\3j1s3y44\\obj\\x86_64"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -967,7 +935,7 @@
 				}
 			],
 			"type" : "UNINITIALIZED",
-			"value" : "K:\\cs5520\\project\\Unity_project\\Archiventure\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\unityLibrary\\build\\intermediates\\cxx\\RelWithDebInfo\\3j1s3y44\\obj\\arm64-v8a"
+			"value" : "K:\\cs5520\\project\\Unity_project\\Archiventure\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\unityLibrary\\build\\intermediates\\cxx\\RelWithDebInfo\\3j1s3y44\\obj\\x86_64"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS",
@@ -1207,11 +1175,11 @@
 			[
 				{
 					"name" : "HELPSTRING",
-					"value" : "The CMake toolchain file"
+					"value" : "No help, variable specified on the command line."
 				}
 			],
-			"type" : "FILEPATH",
-			"value" : "K:/Unity/6000.0.27f1/Editor/Data/PlaybackEngines/AndroidPlayer/NDK/build/cmake/android.toolchain.cmake"
+			"type" : "UNINITIALIZED",
+			"value" : "K:\\Unity\\6000.0.27f1\\Editor\\Data\\PlaybackEngines\\AndroidPlayer\\NDK\\build\\cmake\\android.toolchain.cmake"
 		},
 		{
 			"name" : "CMAKE_VERBOSE_MAKEFILE",
@@ -1239,7 +1207,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "K:/cs5520/project/Unity_project/Archiventure/.utmp/RelWithDebInfo/3j1s3y44/arm64-v8a"
+			"value" : "K:/cs5520/project/Unity_project/Archiventure/.utmp/RelWithDebInfo/3j1s3y44/x86_64"
 		},
 		{
 			"name" : "Unity_IS_TOP_LEVEL",
@@ -1275,7 +1243,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "K:/cs5520/project/Unity_project/Archiventure/.utmp/RelWithDebInfo/3j1s3y44/prefab/arm64-v8a/prefab/lib/aarch64-linux-android/cmake/game-activity"
+			"value" : "K:/cs5520/project/Unity_project/Archiventure/.utmp/RelWithDebInfo/3j1s3y44/prefab/x86_64/prefab/lib/x86_64-linux-android/cmake/game-activity"
 		},
 		{
 			"name" : "game_BINARY_DIR",
@@ -1287,7 +1255,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "K:/cs5520/project/Unity_project/Archiventure/.utmp/RelWithDebInfo/3j1s3y44/arm64-v8a/GameActivity"
+			"value" : "K:/cs5520/project/Unity_project/Archiventure/.utmp/RelWithDebInfo/3j1s3y44/x86_64/GameActivity"
 		},
 		{
 			"name" : "game_IS_TOP_LEVEL",
@@ -1335,7 +1303,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "K:/cs5520/project/Unity_project/Archiventure/.utmp/RelWithDebInfo/3j1s3y44/prefab/arm64-v8a/prefab/lib/aarch64-linux-android/cmake/games-frame-pacing"
+			"value" : "K:/cs5520/project/Unity_project/Archiventure/.utmp/RelWithDebInfo/3j1s3y44/prefab/x86_64/prefab/lib/x86_64-linux-android/cmake/games-frame-pacing"
 		},
 		{
 			"name" : "swappywrapper_BINARY_DIR",
@@ -1347,7 +1315,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "K:/cs5520/project/Unity_project/Archiventure/.utmp/RelWithDebInfo/3j1s3y44/arm64-v8a/FramePacing"
+			"value" : "K:/cs5520/project/Unity_project/Archiventure/.utmp/RelWithDebInfo/3j1s3y44/x86_64/FramePacing"
 		},
 		{
 			"name" : "swappywrapper_IS_TOP_LEVEL",
